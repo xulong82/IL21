@@ -1,0 +1,57 @@
+; Name	symbol
+; Species and nomenclature	Mus musculus, MGI symbols
+; Motif collection	10K (9713 PWMs)
+; Minimum NEScore	3.0
+; Rank threshold for visualization	5000
+; ROC threshold for AUC calculation (%)	0.03
+; Minimum identity between orthologous genes	0.0
+; Maximum false discovery rate (FDR) on motif similarity	0.001
+; Motif rankings database	500bp upstream (7 species)
+; Number of valid nodes	100
+; iRegulon version	iRegulon v1.3 (build: 2015-02-12)
+# Rank	Motif id	AUC	NES	ClusterCode	Transcription factor	Target genes
+1	homer-M00833	0.08431	4.45371	M1		Foxo1,Igfbp4,Tcf20,St8sia6,Rapgef6,Slc16a5,Pdk1,S1pr1,Ssh2,Smurf2,Mcmbp,Smg1
+2	yetfasco-781	0.0804588	4.17295	M1		Igfbp4,Rps17,Snrnp200,Filip1l,Chd2,Rpl30,Ctcf,Lef1
+3	encode-UW.Motif.0220	0.0771389	3.93091	M2		Igfbp4,Lef1,Sell,Actn1,Ablim1,Cast,Rapgef4,Txnip
+4	jaspar-CN0145.1	0.0752631	3.79416	M3		Stt3b,Chd2,Filip1l,Gm11346,Osbpl8,Dapl1,Pde4d,Ppm1h,Igfbp4,Pdk1,Scml4
+5	transfac_pro-M01078	0.0749975	3.7748	M4	Ets1,Ets2,Etv2,Elk3,Fev,Etv1,Erf,Etv5,Gabpa,Elk4,Etv3,Fli1,Erg,Elk1,Ehf,Elf2,Spdef,Elf3,Elf1,Spic,Gabpb1,Elf4,Elf5,Spib,Sfpi1,Gata2,Gata3,Gata4,Gata6,Gata1,Gata5	Senp7,Dnajb9,Chd2,Rapgef6,Nme2,Fbxl12,Skil,Rapgef4,Rps5
+6	homer-M01786	0.0747983	3.76028	M5		Atp1b3,Epc1,Rpl26,Foxo1,Bptf,St8sia1,Ppm1h,Gramd3,St8sia6,Atp1b1,Ablim1,Mettl9,Fbxl12,Inadl,Lef1,Arl4c,Ssh2,Txnip,Peli1,Stt3b,Cast,Smurf2
+7	yetfasco-676	0.0733707	3.6562	M5		Epc1,Atp1b3,Bptf,Foxo1,Rpl26,Fbxl12,Gramd3,St8sia1,Mettl9,Ppm1h,St8sia6,Atp1b1,Ablim1,Smurf2,Cep97,Inadl,Lef1,Txnip,D14Abb1e,Ssh2,Osbpl8,Arl4c,Peli1,Rapgef6
+8	swissregulon-PAX4.p2	0.0733043	3.65136	M6	Pax4,Zfp281,Maz,Tcf3,Nr2f2,Nr2f1,Zfp444,Zfp467,Klf4	Ablim1,Lef1,Dapl1,Rapgef4,Foxo1,Mettl9,Chd2,St8sia1,Bcl2,Ppp2r5a,Cast,Epc1,S1pr1,Gm11346,Nae1,Pydc3,Add3,Rpl17,Ndrg3,Igfbp4,Filip1l,Slc16a5,N4bp2
+9	transfac_pro-M03844	0.0730719	3.63442	M4	Elk4,Ets1,Elk1	Chd2,Skil,Nme2,Senp7,Sell,Rapgef4,Fbxl12,Calcrl,Pydc3,Nae1,Rpl30,Filip1l,Rapgef6,Dapl1,St8sia6,Snrnp200,Bach2,Dnajb9,Osbpl8,Slc16a5
+10	yetfasco-952	0.0718436	3.54486	M2		Ctcf,Sell,Ablim1,Bcl2,Ppm1h,Igfbp4,Dapl1,Calcrl
+11	encode-UW.Motif.0219	0.0717938	3.54123	M2		Igfbp4,Add3,Sell,Dapl1,Mettl9,Cast,Filip1l
+12	yetfasco-399	0.0713954	3.51219	M5		Epc1,Atp1b3,Bptf,Foxo1,Rpl26,Gramd3,Fbxl12,Mettl9,St8sia1,Ppm1h,St8sia6,Atp1b1,Ablim1,Smurf2,Cep97,Txnip,Ssh2,Inadl,Lef1,Cast,Stt3b,Osbpl8,D14Abb1e,Rapgef6,Arl4c
+13	swissregulon-TGIF1.p2	0.0709804	3.48193	M7	Tgif1	Mll3,Rapgef4,Ssh2,Gm11346,Ppp2r5a,Ctcf,Osbpl8,Gramd3,Scml4,4930523C07Rik
+14	jaspar-PF0018.1	0.07025	3.42868	M8	Arnt,Bhlhe40,Srebf1,Srebf2,Atf3,Arntl,Helt	AW549877,Osbpl8,Chd2,Actn1,St8sia6,Bptf,Tcf20,Stt3b,Filip1l,Nae1
+15	transfac_pro-M02854	0.069918	3.40448	M6	Foxj1,Foxl1	Sell,Dnajb9,Mll3,Gm11346,Ppp2r5a,Atp1b1,Igfbp4,Arl4c,Scml4,Slc16a5,Calcrl,Peli1,Txnip
+16	taipale-AACCGGAARTR-ETV2-DBD	0.0698184	3.39722	M4	Etv2,Gabpa,Erg,Elk3,Elk1,Fli1,Fev,Ets2,Etv1,Elk4,Ets1,Etv3,Erf,Etv5,Elf2,Elf1,Elf3,Etv4,Etv6	Senp7,Fbxl12,Chd2,Dnajb9,Rapgef6,Snrnp200,Rpl30,Gramd3
+17	elemento-CAGGTGA	0.069752	3.39238	M8		Lef1,AW549877,Chd2,St8sia6,Tcf20,Smurf2,Add3,Ppm1h,Inadl,Emb
+18	encode-UW.Motif.0509	0.0696358	3.38391	M2		Igfbp4,Sell,Chd2,Gramd3,Actn1,Lef1,Inadl,Filip1l,Dapl1
+19	hdpi-PRNP	0.069503	3.37423	M5	Prnp	Igfbp4,Sell,D14Abb1e,Ctcf,Arl4c,Filip1l,Rpl12,Rasgrp1,Actn1,Dnajb9,Lef1,Rps15a,Sh3bp5,Atp1b1,Cast,Rps17,Cep97,Skil,Rapgef6,Txnip,Nme2,St8sia6,Mcmbp,N4bp2,Bptf,Map3k3,Smg1,Senp7,Stt3b,Npc2,Fbxl12,Pdk1,Rapgef4,Gramd3,Rpl30,Rpl17,Zfp281,S1pr1,Peli1,Mettl9
+20	yetfasco-1163	0.0692208	3.35365	M9	Kdm2b,Kdm2a,Phf8,Jhdm1d,4921501E09Rik,Phf2,Fbxl19	N4bp2,Stt3b,Ppm1h,Tmem66,Cast,Filip1l
+21	transfac_pro-M01374	0.0686232	3.31009	M6	Six4	Chd2,Ablim1,Gm11346,Ppp2r5a,Nae1,Scml4,Azi2,Cast,Actn1,Filip1l
+22	elemento-ACACACAC	0.0685402	3.30404	M10	Jazf1	Treml2,Scml4,St8sia1,Filip1l,Lef1,Calcrl,Add3,Peli1
+23	homer-M01855	0.068507	3.30161	M10		Scml4,Igfbp4,Filip1l,Treml2,Peli1,Calcrl,Nme2,Add3,St8sia1
+24	yetfasco-1961	0.0684074	3.29435	M1		Fbxl12,Arl4c,Tmem66,Ctcf,4930523C07Rik,Dnajb9,Rps15a,Stt3b,Ssh2,Rapgef6,Azi2
+25	flyfactorsurvey-Exd_SOLEXA_FBgn0000611	0.068175	3.27741	M7	Pbx3,Pbx1,Pbx2,Pbx4	Ctcf,Mll3,Chd2,Cep97,Zfp281,Ppp2r5a,Gm11346,Itk,Stt3b,Actn1
+26	transfac_pro-M02867	0.0680588	3.26894	M6	Hic1	Actn1,Add3,Rapgef6,Tsc22d3,Arl4c,Epc1,Filip1l,Peli1,Mettl9
+27	homer-M00219	0.0676604	3.2399	M10	Jazf1	Scml4,Treml2,St8sia1,Filip1l,Calcrl,Add3,Igfbp4,Lef1
+28	yetfasco-1826	0.0675774	3.23384	M11		Rapgef4,Chd2,4930523C07Rik,Filip1l,Epc1,Rpl26,Nae1
+29	yetfasco-1647	0.0671126	3.19996	M1		Treml2,St8sia1,Filip1l,Add3,Ablim1,Scml4
+30	homer-M00049	0.067013	3.1927	M4	Ets1,Elk1,Ets2,Gata2,Gata3,Gata4,Gata6,Gata1,Gata5	Chd2,Skil,Rapgef4,Calcrl,Filip1l,Senp7
+31	transfac_pro-M01411	0.0668802	3.18302	M7	Pknox2,Meis2,Meis3,Meis1,Pknox1,Tgif2,Gm7148	Mll3,Gramd3,Zfp281,Rapgef4,Ppm1h,Ssh2,Stt3b
+32	transfac_pro-M02801	0.0667806	3.17576	M6	Sox18,Sox12,Sox7,Sox5,Sox15,Sry,Sox8,Sox13,Sox9,Sox30,Sox21,Sox11,Nanog,Sox4,Sox6	Sell,Gramd3,Dnajb9,Gm11346,Arl4c,Atp1b1,Slc16a5,Epc1,Peli1,Scml4,Ablim1,Mettl9,Foxo1,Atp1b3,Filip1l
+33	yetfasco-805	0.0667806	3.17576	M6		Epc1,Ssh2,Scml4,Atp1b1,Chd2,Ibtk,Rpl26,Azi2,Stt3b,Cast,Inadl,Calcrl,Treml2,Ctcf,4930523C07Rik,Slc16a5,Actn1,Filip1l,St8sia1
+34	transfac_pro-M03565	0.0665981	3.16244	M8	Snai2	Ppm1h,Lef1,St8sia6,Tcf20,AW549877,Chd2
+35	jaspar-CN0113.1	0.0665483	3.15881	M12	Nf1,Foxa1	Scml4,N4bp2,Add3,Foxo1,Ablim1,Rapgef4,Tmem66
+36	transfac_pro-M01149	0.0661831	3.13219	M7	Dmrta1,Dmrt3,Dmrt2	Scml4,Slc16a5,Rps4x,Cep97,Treml2,Sell,Gramd3,Ablim1,Chd2,Calcrl,Filip1l,Bptf
+37	encode-UW.Motif.0355	0.0661167	3.12735	M2		Rpl30,Epc1,Chd2,Txnip,Igfbp4,Filip1l,Sell,Add3,Gm11346
+38	transfac_pro-M02908	0.0658179	3.10556	M6	Sox30,Sry,Sox21,Sox14	Atp1b1,Sell,Tcf20,Arl4c,AW549877,Filip1l,Add3,Scml4,Atp1b3,S1pr1,Ctcf
+39	transfac_pro-M01407	0.0652037	3.06079	M7	Tgif2,Gm7148,Meis1,Meis3,Meis2,Pknox1,Pknox2	Mll3,Stt3b,Rapgef4,Zfp281,Gramd3,Ctcf,Ppp2r5a,Gm11346,Cep97,Ablim1,Ssh2,4930523C07Rik,Calcrl
+40	homer-M00325	0.0651373	3.05595	M4	Elf2,Elf1,Elf4,Ehf,Gabpa,Elf3,Elf5,Sfpi1,Elk3,Ets1,Fli1,Etv5,Spdef,Gabpb1,Elk1,Fev	Dnajb9,Rapgef6,Chd2,Rps5,Fbxl12,Nme2,Gramd3,Snrnp200
+41	yetfasco-1483	0.0648053	3.03174	M1	Srf	Cast,Sell,Gramd3,Foxo1,Dapl1,Rapgef4,Chd2,Ctcf,Ibtk,Ppm1h,Arl4c,Igfbp4,Dnajb9,Rps5,Gm11346,Mettl9,Treml2,Filip1l,Txnip,Ssh2,Osbpl8,Ablim1,Lef1,Scml4,Sh3bp5
+42	transfac_pro-M02064	0.0647721	3.02932	M4	Ets2,Elk1,Elk4,Etv2,Fev,Ets1,Erf,Etv1,Etv5,Elk3,Erg,Fli1,Gabpa,Etv3,Elf2,Elf1,Gabpb1,Spdef,Elf3,Elf4,Spic,Elf5,Ehf,Spib,Sfpi1	Senp7,Chd2,Fbxl12,Skil,Rapgef6,Dnajb9
+43	yetfasco-848	0.0645397	3.01238	M6		Epc1,Ssh2,St8sia1,Igfbp4,Lef1,Chd2,Scml4,Stt3b,Dnajb9,Nae1,Ablim1,Ppp2r5a,Cast
+44	yetfasco-1238	0.0643903	3.00149	M10		Scml4,St8sia1,Treml2,Filip1l,Ppp2r5a,Lef1,Add3,Calcrl
+45	jaspar-PB0012.1	0.0643737	3.00028	M4	Elf3,Ehf,Elf5,Ets1,Elf2,Spic,Sfpi1,Elf1,Elf4,Elk1,Spib,Etv2,Etv5	Chd2,Dnajb9,Fbxl12,Filip1l,Rps5,Rapgef6,Skil,Senp7,Bcl2,Sell

@@ -1,0 +1,41 @@
+; Name	symbol_1
+; Species and nomenclature	Mus musculus, MGI symbols
+; Motif collection	10K (9713 PWMs)
+; Minimum NEScore	3.0
+; Rank threshold for visualization	5000
+; ROC threshold for AUC calculation (%)	0.03
+; Minimum identity between orthologous genes	0.0
+; Maximum false discovery rate (FDR) on motif similarity	0.001
+; Motif rankings database	500bp upstream (7 species)
+; Number of valid nodes	111
+; iRegulon version	iRegulon v1.3 (build: 2015-02-12)
+# Rank	Motif id	AUC	NES	ClusterCode	Transcription factor	Target genes
+1	homer-M00051	0.0808738	4.15829	M1	Runx1,Ing4,Zfp354c,Gli3,Zbtb14,Elf5	Spn,Arhgap25,Adcy7,Dock2,Golph3,Ptpn11,Pou2af1,Gng2,Camk2d,Dennd2d,Trim8,Zc3h12d,Gpm6b,Itgav,Tiam1,Sept9
+2	yetfasco-964	0.0794794	4.05036	M2	Gata5,Gata1,Gata4,Gata2,Gata3,Gata6	Hivep2,Bcl6,Jarid2,Slc20a1,Map4k4,Sh3kbp1,Tiam1,Cyb5b,Smap1,Vcp,Cdc25b,Il21,Slc25a4,Gpm6b
+3	tfdimers-MD00603	0.0759354	3.77606	M3	Yy1	Spn,Dock2,Gpm6b,Adcy7,Ptpn11,Hnrnpl,Ptms,Trim8,Mki67,Rsu1,Arhgap25,Fkbp1a,Celf2
+4	homer-M00386	0.0756885	3.75694	M4	Rorc,Rorb,Rora	Celf2,Nfatc1,Hivep2,Il21,B3gnt2,Mki67,Trim8,Arhgap25,Jarid2,Egr1,Ccdc12,Cxcr5
+5	transfac_pro-M01441	0.0754561	3.73896	M4	Nobox,Alx4,Pax7,Shox2,Alx1,Hoxb4,Prop1,Hoxc5,Pou3f2,Uncx,Hoxa7,Vsx1,Lhx9,Hoxc4,Vax2,Isx,Phox2a,Phox2b,Lbx2,Pax4,Lhx1,En1,Lhx2,Nkx1-2,Msx1,Hoxa4,Lmx1a,En2,Rax,Nkx6-3,Otp,Prrx1,Prrx2,Lmx1b,Gbx2,Emx2,Hoxa3,Mnx1,Hoxc6,Rhox6,Lhx5,Pou2f1,Hoxd1,Nkx6-1,Arid3a,Msx2,Alx3,Nkx1-1,Lhx6,Esx1,Evx1,Gbx1,Dlx5,Hoxb3,Dbx2,Vsx2,Lhx3,Pax6,Arx,Lhx4,Lhx8,Barhl1,Msx3,Gsx2,Barx2,Hoxb7,Pou1f1,Vax1,Pou3f4,Pdx1,Hoxa5,Irf6,Evx2,Pou3f1,Isl2,Dlx1,Pou6f1,Hoxa1,Pou4f3,Dlx2,Dlx4,Barx1,Hoxd3,Hoxb5,Bsx,Hmbox1,Hoxc8,Crx,Noto,Emx1,Hesx1,Mixl1,Gsx1,Prrxl1,Dbp,Lbx1,Tcf3,Hoxb2,Mycs,Pou6f2	Trim8,Nfatc1,Gpm6b,Bcl6,Vcp,Sh3kbp1,Cyb5b,Egr1,Tiam1,Hnrnpl,Rsu1,Ccdc12,Dad1
+6	homer-M00684	0.0753108	3.72771	M4	Rorc,Rorb,Rora	Celf2,Nfatc1,Hivep2,Trim8,B3gnt2,Il21,Jarid2,Mki67,Egr1,Arhgap25,Ccdc12,Axin2,Cxcr5
+7	transfac_pro-M00531	0.0750058	3.70411	M1	Elf2,Erf,Elk4,Elk1,Fli1,Erg,Ets2,Ets1,Elf1,Gata2,Gata3,Gata4,Gata6,Gata1,Gata5,Gli3,Zbtb14,Runx2,Cbfb	Arhgap25,Spn,Lat,Gbf1,Trim8,Zc3h12d,Man2a1,Adcy7,Ptms,Myo1g
+8	tfdimers-MD00393	0.0745265	3.66701	M3	Sox10,Ets1	Lat,Gbf1,Jarid2,Trim8,Sh3kbp1,Ermp1,Vps52,Asap1,Adcy7
+9	hdpi-RUFY3	0.0738874	3.61754	M5	Rufy3	Egr1,Nfatc1,Hivep2,Trim8,Tox,Celf2,Bcl6,Hnrnpl,Slc25a4,Sh3kbp1,Sept9
+10	yetfasco-2039	0.0731612	3.56133	M2		Jarid2,Sh3kbp1,Rsu1,Bcl6,B3gnt2,Vcp,Eif4enif1,Egr1
+11	transfac_pro-M01970	0.0727254	3.5276	M2		Jarid2,Sh3kbp1,Rsu1,Celf2,Bcl6,Egr1,Vcp,Eif4enif1,B3gnt2
+12	tfdimers-MD00263	0.0723914	3.50175	M3	Stat1,Tcf3,Tcf7l1,Nanog,Smad1	Trim8,Dock2,Spn,Zc3h12d,Gpm6b,Cxcr5,Celf2,Adcy7,Arhgap25
+13	transfac_pro-M01239	0.0711277	3.40394	M6	Rel,Rela,Bcl3,Ebf1,E2f1,Relb,Stat6,Ovol2,Yy1,Mzf1,Zbtb7a,Nfatc3	Cxcr5,Hivep2,Jarid2,Ptms,Il21,Casp4,Vim,Gpr183,Trim8,Nfatc1
+14	transfac_pro-M00331	0.0701981	3.33199	M4	Cbfb	Hivep2,Cpsf6,Sh3kbp1,Cxcr5,Cd28,Zc3h12d,Celf2,Dclre1c,Ptms,Jarid2,Cenpa,Tox,Btla
+15	tfdimers-MD00321	0.069864	3.30613	M1	Ing4,Fli1,Runx1	Adcy7,Arhgap25,Dock2,Sept9,Zc3h12d,Itgav,Man2a1,Tspan32,Spn,Gpm6b,Camk2d,Tiam1,Aff3,Ptpn11,Mki67,Fkbp1a,Malt1,S100a11,Trim8,Tmem33,Slc25a4,Tox,Vim,Vps52,Dck,Ptms,Eea1,Ttc39b,Asap1,Myo1g,Map4k4,Nt5e
+16	encode-UW.Motif.0273	0.0696171	3.28702	M4		Trim8,Lat,Adcy7,Gbf1,Arhgap25,Tiam1,Celf2,Hivep2,Fyn,Egr1
+17	yetfasco-2185	0.0695009	3.27803	M4		Jarid2,Trim8,Mki67,Nfatc1,Bcl6,Egr1,Golph3,Maf,Map4k4,Man2a1,Sh3kbp1,Tox,B3gnt2,Snx11,Myo1g,Tiam1,Camk2d,Ptms,Fyn,Plcg1,Vcp,Eif4enif1,Dock2,Slc25a4,Gbf1,Ccdc12,Lrrfip1,Celf2,Nt5e
+18	stark-AAANNNNNNCAA	0.0692685	3.26004	M4		Hivep2,Cxcr5,Celf2,Nfatc1,Il21,Sh3kbp1,Gpr183,Trim8,Btla,Abhd2
+19	yetfasco-1670	0.0691088	3.24768	M7		Tiam1,Il21,Btla,Gpm6b,Jarid2,Bcl6,Rnf145
+20	yetfasco-1491	0.0688037	3.22407	M4	Dbp	Nfatc1,Cyb5b,Golph3,Vim,Arhgap25,Bcl6,Vps52,Tox,Btla,Trim8,Maf
+21	hdpi-R3HDM2	0.0680194	3.16336	M8	R3hdm2	Nfatc1,Trim8,Jarid2,Tox,Mki67,Hnrnpl,Tiam1,Map4k4,Hivep2,Celf2,Egr1,Slc25a4
+22	yetfasco-2166	0.0679904	3.16111	M4	Srf,Jazf1,Tbp,Tbpl2,Tbpl1,2310045N01Rik,Mef2b,Mef2a,Mef2c,Mef2d,Gata2,Gata3,Gata4,Gata6,Elk1,Gata1,Gata5,Mybl2,Myb,Mybl1,Snapc4,Zim1,Smad4,Mycs,Pou3f2,Pou3f3,Pou3f1,Pou3f4,Nf1,Foxa3	Trim8,Egr1,Nfatc1,Map4k4,Celf2,Maf,Tox,Golph3,Hivep2,Jarid2,Ptms,Vim,Hnrnpl,Axin2,Myo1g,Mki67,Tiam1,Fyn,Prkca,Slc25a4,B3gnt2,Camk2d,Bcl6,Cxcr5,Sh3kbp1,Abhd2,Sept9,Eif4enif1,Gpr183,Asap1,Tmem65,Dock2,Gpm6b
+23	encode-UW.Motif.0546	0.0675691	3.12851	M4		Trim8,Celf2,Cxcr5,Arhgap25,Tox,Hivep2,Il21,Sh3kbp1
+24	yetfasco-2213	0.0675256	3.12514	M4	Srf,Pax4,Stat1,Tbp,Tbpl2,Tbpl1,Jazf1,Mef2b,Mef2a,2310045N01Rik,Mef2c,Mef2d,Zim1,Gata2,Gata3,Gata4,Gata6,Elk1,Gata1,Gata5,Nf1,Foxa3,Mybl1,Mybl2,Snapc4,Myb,Nr2f2,Nr2f1,Zfp384,Zfp362,Tcf3,Pax1,Pax9,E2f1,Yy1	Trim8,Nfatc1,Celf2,Map4k4,Egr1,Hivep2,Golph3,Maf,Tox,Ptms,Jarid2
+25	yetfasco-2172	0.0671915	3.09928	M4	Tbp,Tbpl2,Tbpl1,Pax4,Stat1,Srf,Zim1,Mef2b,Mef2a,2310045N01Rik,Mef2c,Mef2d,Jazf1,Mybl1,Mybl2,Snapc4,Myb,Gata2,Gata3,Gata4,Gata6,Elk1,Gata1,Gata5,Nf1,Foxa3,Zfp384,Zfp362,Nr2f2,Nr2f1,Pax1,Pax9,Tcf3	Trim8,Celf2,Nfatc1,Map4k4,Egr1,Tox,Hivep2,Golph3,Jarid2,Maf,Ptms,Tiam1
+26	transfac_pro-M03548	0.0671043	3.09253	M4	Foxl2	Trim8,Egr1,Jarid2,Nfatc1,Cxcr5,Tbc1d4,Bcl6,Rsu1,Hivep2
+27	yetfasco-2146	0.066596	3.05319	M4	Tox4,Hmgb4,Gm5828,Tox2,Tox,Tox3	Nfatc1,Egr1,Trim8,Map4k4,Hivep2,Celf2,Jarid2,Vim,Slc25a4,Maf,Tox,Golph3
+28	encode-UW.Motif.0558	0.0663055	3.0307	M4		Hivep2,Il21,Cxcr5,Arhgap25,Trim8,Btla,Sh3kbp1,Spn,Celf2
+29	yetfasco-2216	0.0661312	3.01721	M4	Tox4,Gm5828,Hmgb4,Tox3,Tox,Tox2	Nfatc1,Egr1,Trim8,Map4k4,Hivep2,Vim,Celf2,Jarid2,Maf,Slc25a4,Golph3,Hnrnpl,Tox,Sept9,Ptms

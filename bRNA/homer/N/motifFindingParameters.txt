@@ -1,0 +1,1 @@
+cmd = N.txt mouse N/ -p 6

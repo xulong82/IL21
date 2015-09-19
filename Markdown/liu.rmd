@@ -1,0 +1,49 @@
+## Integrate with Liu's datasets
+Xulong Wang (xulong.wang@jax.org)
+
+***
+
+```{r, echo=FALSE, warning=FALSE}
+library(ape)
+library(amap)
+library(ggplot2)
+library(lattice)
+
+rm(list = ls())
+```
+
+##### Gene expression of Liu's samples were downloaded from NCBI GEO (GSE40068). To identify the most similar Liu's samples with our samples, we chose genes whose expression levels are significant different in at least one of our 3 samples. 
+```{r}
+setwd("~/Dropbox/GitHub/Lupus")
+load("./data/myTpm.rdt")
+load("./data/ebseq.rdt")
+geneId <- rownames(sig0.95)
+load("./data/liu.rdt")
+
+rnaseq <- myTpm[geneId, ]
+rnaseq <- log2(rnaseq + 1)
+rnaseq <- rnaseq[apply(rnaseq, 1, max) > 5, ]
+
+idx <- intersect(rownames(rnaseq), rownames(liu))  
+data1 <- cbind(rnaseq[idx, ], liu[idx, ])
+
+dim(data1)
+```
+
+##### To correct the batch variation between our and Liu's experiment, we regressed each gene's expression on the first principal component of the combined datasets, which represents the batch variation well. The regression residuals were taken as the input for a two-way hierarchical clustering. 
+```{r}
+dt.ctr <- data1 - apply(data1, 1, mean)
+dt.svd <- svd(dt.ctr)  # SVD
+barplot(dt.svd$v[, 1])
+
+dt2 <- t(apply(dt.ctr, 1, function (x) {lm(x ~ dt.svd$v[, 1])$res}))  # PC1
+dt2 <- as.data.frame(dt2)
+
+hc1 <- hcluster(t(dt2), method = "pearson", link = "average")
+col.manual <- c("darkblue", "darkorchid2", "darkgreen")
+clusts = cutree(hc1, 3)
+
+plot(as.phylo(hc1), tip.color = col.manual[clusts], edge.width = 2, font = 2, label.offset = .03)
+```
+
+```

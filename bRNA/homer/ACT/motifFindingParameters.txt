@@ -1,0 +1,1 @@
+cmd = ACT.txt mouse ACT/ -p 6

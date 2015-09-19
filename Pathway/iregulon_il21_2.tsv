@@ -1,0 +1,89 @@
+; Name	symbol
+; Species and nomenclature	Mus musculus, MGI symbols
+; Motif collection	10K (9713 PWMs)
+; Minimum NEScore	3.0
+; Rank threshold for visualization	5000
+; ROC threshold for AUC calculation (%)	0.03
+; Minimum identity between orthologous genes	0.0
+; Maximum false discovery rate (FDR) on motif similarity	0.001
+; Motif rankings database	20kb centered around TSS (7 species)
+; Number of valid nodes	111
+; iRegulon version	iRegulon v1.3 (build: 2015-02-12)
+# Rank	Motif id	AUC	NES	ClusterCode	Transcription factor	Target genes
+1	jaspar-MA0013.1	0.099204	5.00166	M1		Trim8,Nfatc1,Tox,Ptms,Hivep2,Bcl6,Stx16,Hnrnpl,Maf,Celf2,Fyn
+2	flyfactorsurvey-hb_SANGER_2.5_FBgn0001180	0.0958924	4.7689	M2	Zfp513	Stx16,Hnrnpl,Maf,Celf2,Tox,Trim8,Sh3kbp1,Ptms,Hivep2,Jarid2,Gbf1,Cd4,Fyn,Egr1,Tbc1d4,Bcl6,Cpsf6,Zc3h12d,Sept9,Adcy7,Prkca,Nfatc1
+3	encode-UW.Motif.0038	0.0891529	4.29521	M3		Maf,Trim8,Stx16,Celf2,Tox,Bcl6,Jarid2,Sh3kbp1,Cyb5b,Cpsf6,Gbf1,Hnrnpl,Adcy7,Eif4enif1,Prkca
+4	yetfasco-1221	0.0885574	4.25336	M3	Mef2a,Mef2b,2310045N01Rik,Mef2c,Mef2d,Rfx2,Rfx3,Rfx4,Rfx8,Rfx6,Rfx1	Stx16,Sh3kbp1,Hivep2,Tox,Adcy7,Maf,Trim8,Bcl6,Asb8,Gbf1,Egr1,Tbc1d4,Cd4,Eif4enif1,Fyn,Map4k4,Sept9,Ptms,Abhd2,Cpsf6,Rnf145,Jarid2,Aebp2
+5	yetfasco-1263	0.0885138	4.2503	M3	Tgif2,Gm7148,Tgif1,2310045N01Rik,Mef2b,Mef2a,Mef2c,Mef2d,Rfx2,Rfx3,Rfx4,Rfx6,Rfx8,Rfx1	Stx16,Tbc1d4,Sh3kbp1,Bcl6,Hivep2,Adcy7,Asb8,Maf,Ptms,Cd4,Trim8,Jarid2,Tox,Fyn,Gbf1,Tmem65,Eif4enif1,Abhd2
+6	yetfasco-1182	0.0882233	4.22988	M3	Rfx2,Rfx3,Rfx6,Rfx1,Rfx4,Rfx8,Tgif1,Tgif2,Gm7148,Hira,Mef2a,Mef2d,Mef2c,2310045N01Rik,Mef2b,Prdm2,Prdm1,Zfp683	Stx16,Sh3kbp1,Celf2,Eif4enif1,Trim8,Maf,Gbf1,Bcl6,Cd4,Tox,Adcy7,Cyb5b,Hivep2,Snx11
+7	transfac_pro-M02827	0.0869742	4.14208	M1	Zfp105	Trim8,Stx16,Celf2,Nfatc1,Tox,Maf,Jarid2,Sh3kbp1,Hivep2,Fyn,Bcl6,Egr1,Ccdc12,Gbf1,Tbc1d4,Hnrnpl,Adcy7
+8	yetfasco-1207	0.0865966	4.11554	M3	Tgif1,Tgif2,Gm7148,Rfx2,Rfx6,Rfx1,Rfx3,Rfx4,Rfx8,Prdm2,Prdm1,Zfp683	Stx16,Sh3kbp1,Maf,Adcy7,Tox,Trim8,Hivep2,Bcl6,Fyn,Cd4,Asb8,Sept9,Gbf1,Tbc1d4,Ptms
+9	tfdimers-MD00192	0.0855653	4.04306	M4	Churc1,Irf1,Irf2,Irf4,Irf9,Irf8,Irf5,Irf3,Irf7,Rela,Pura	Bcl6,Cxcr5,Pou2af1,Egr1,Jarid2,Maf,Trim8,Dennd2d,Zc3h12d,B3gnt2,Celf2,Cd4
+10	flyfactorsurvey-jim_SANGER_2.5_FBgn0027339	0.0852022	4.01754	M2		Maf,Stx16,Tox,Celf2,Bcl6,Hnrnpl,Trim8,Jarid2,Cyb5b,Sh3kbp1,Fyn,Hivep2,Gbf1,Gpm6b,Slc20a1,Cpsf6,Asb8
+11	yetfasco-1191	0.0849553	4.00018	M3	Tgif2,Gm7148,Tgif1,Nr3c1,Pgr,Prdm2,Prdm1,Zfp683,Foxp3,Mybl1,Mybl2,Snapc4,Myb,Rfx2,Rfx3,Rfx4,Rfx8,Rfx6,Rfx1	Stx16,Celf2,Tox,Sh3kbp1,Hivep2,Eif4enif1,Adcy7,Maf,Bcl6,Asb8
+12	flyfactorsurvey-sqz_SOLEXA_5_FBgn0010768	0.0845486	3.9716	M1	Zfp362,Zfp384,Srf,Zfp513	Maf,Stx16,Trim8,Sh3kbp1,Jarid2,Celf2,Bcl6,Hnrnpl,Hivep2,Cyb5b,Eif4enif1,Cd4,Ptms,Egr1,Gbf1,Gpm6b,Snx11,Cpsf6,Tox,Prkca,Adcy7
+13	jaspar-MA0022.1	0.083924	3.9277	M4	Rela,Rel,Relb	Maf,Snx11,Bcl6,Asap1,Nfatc1,Cxcr5,Sh3kbp1,Fyn,Stx16,Jarid2,Sept9,Hivep2
+14	yetfasco-1275	0.0836626	3.90932	M3	Mef2a,Mef2d,Mef2c,2310045N01Rik,Mef2b,Rfx2,Rfx3,Rfx1,Rfx6,Rfx4,Rfx8,Tgif1,Tgif2,Gm7148,Smad1,Nr3c1,Irf1,Foxi1	Stx16,Sh3kbp1,Celf2,Adcy7,Trim8,Eif4enif1,Cd4,Bcl6,Cyb5b,Ccdc12,Tox,Hivep2,Maf,Asb8,Snx11
+15	hdpi-CSTF2	0.0832413	3.87972	M5	Cstf2	Gbf1,Nfatc1,Trim8,Stx16,Ptms,Egr1,Fyn,Tox,Hivep2,Celf2,Bcl6
+16	flyfactorsurvey-jim_F1-9_SOLEXA_2.5_FBgn0027339	0.0828056	3.84909	M1	Zfp362,Zfp384	Maf,Stx16,Tox,Hnrnpl,Trim8,Celf2,Bcl6,Sh3kbp1,Jarid2,Fyn,Cyb5b,Eif4enif1,Hivep2,Ptms,Egr1,Gbf1,Tbc1d4,Snx11,Ccdc12,Map4k4,Gpm6b,Asb8
+17	transfac_public-M00190	0.0819341	3.78784	M1	Cebpa,Cebpb,Cebpe,Cebpd,Cebpg,Mafb,Nr3c1	Nfatc1,Bcl6,Ptpn11,Jarid2,Hivep2,Maf,Pou2af1,Trim8,Fyn
+18	yetfasco-1832	0.0812805	3.7419	M1		Trim8,Stx16,Hivep2,Maf,Ptms,Bcl6,Sh3kbp1,Celf2,Cd4,Nfatc1,Fyn
+19	jaspar-MA0010.1	0.0811498	3.73271	M1		Trim8,Stx16,Nfatc1,Hivep2,Maf,Tbc1d4,Hnrnpl,Bcl6
+20	yetfasco-1185	0.0811498	3.73271	M3	Prdm2,Zfp683,Prdm1,Rfx2,Rfx3,Rfx4,Rfx8,Rfx6,Rfx1	Sh3kbp1,Stx16,Maf,Celf2,Adcy7,Bcl6,Hivep2,Tox,Fyn,Cd4
+21	yetfasco-1192	0.08099	3.72148	M3	Tgif2,Gm7148,Tgif1,Prdm2,Prdm1,Zfp683,Mef2a,Mef2d,Mef2c,Mef2b,2310045N01Rik	Stx16,Sh3kbp1,Adcy7,Cd4,Eif4enif1,Bcl6,Asb8,Maf,Gbf1,Celf2,Cyb5b,Jarid2,Trim8,Tox,Hivep2
+22	yetfasco-1203	0.0809464	3.71842	M3	Tgif2,Gm7148,Tgif1	Stx16,Sh3kbp1,Tox,Celf2,Trim8,Eif4enif1,Maf
+23	iDMMPMM-GT	0.0808012	3.70821	M1	Hlf	Fyn,Ptpn11,Nfatc1,Sh3kbp1,Maf,Cdc25b,Hnrnpl,Stx16,Ptms,Bcl6,Tox
+24	hdpi-RUFY3	0.0803364	3.67554	M5	Rufy3	Egr1,Nfatc1,Stx16,Gbf1,Trim8,Hivep2,Fyn,Ptms,Tbc1d4,Maf,Tox,Cdc25b,Zc3h12d,Axin2,Bcl6,Jarid2,Chd1,Asap1,Adcy7,Celf2,Gpm6b,Snx11,Rnf145,Sh3kbp1,Top2a,B3gnt2,Cpsf6
+25	yetfasco-1193	0.0801911	3.66533	M3		Maf,Stx16,Trim8,Sh3kbp1,Tox,Adcy7,Bcl6,Zc3h12d,Hivep2,Jarid2,Cyb5b
+26	yetfasco-1239	0.080075	3.65717	M3	Mef2a,Mef2c,Mef2d,2310045N01Rik,Mef2b,Zfp683,Prdm1,Prdm2,E2f1,Tcf3,Stat1,Tgif1,Tgif2,Gm7148,Rfx2,Rfx3,Rfx6,Mybl2,Rfx1,Mybl1,Snapc4,Rfx4,Myb,Rfx8	Celf2,Stx16,Sh3kbp1,Adcy7,Bcl6,Trim8,Eif4enif1,Cd4,Cyb5b,Gbf1,Ccdc12,Tox,Maf,Hivep2,Asb8,Abhd2,Snx11
+27	wolfe-rn_SOLEXA_F2-4	0.0798135	3.63879	M1	Zfp362,Zfp384,Zfp513	Maf,Stx16,Sh3kbp1,Trim8,Jarid2,Ptms,Bcl6,Gbf1,Hnrnpl,Hivep2,Snx11,Eif4enif1
+28	jaspar-CN0091.1	0.0791163	3.58979	M6		Map4k4,Maf,Fyn,Celf2,Trim8,Camk2d,Eif4enif1,Gbf1,Tiam1,Dock2,Tmem33,Stx16,Gpr183,Rsu1
+29	homer-M00267	0.0788839	3.57345	M3	Rfx2,Rfx3,Rfx4,Rfx6,Rfx8,Rfx1,Mybl2,Myb,Mybl1,Snapc4	Celf2,Trim8,Maf,Stx16,Bcl6,Sh3kbp1,Cxcr5,Cpsf6,Adcy7,Ptms,Jarid2,Map4k4,Tox,Hivep2,Slc20a1,Fyn,Gbf1,Snx11,Eif4enif1,Asb8,Rnf145,Sept9,Ccdc12
+30	wolfe-Sqz_SOLEXA_F1-3	0.0782448	3.52854	M1	Zfp362,Zfp513	Maf,Stx16,Trim8,Sh3kbp1,Jarid2,Bcl6,Celf2,Eif4enif1,Hivep2,Gbf1,Ptms,Hnrnpl,Snx11,Asb8,Gpm6b,Egr1,Adcy7,Cpsf6,Cyb5b,Cd4,Slc20a1,Prkca,Tox
+31	jaspar-MA0045.1	0.0780996	3.51833	M1		Celf2,Bcl6,Trim8,Fyn,Stx16,Maf,Eea1,Gbf1,Hivep2,Map4k4,Aebp2,Jarid2,Sh3kbp1,Asap1
+32	transfac_pro-M02853	0.078056	3.51526	M1	Foxa2,Nanog	Trim8,Tbc1d4,Maf,Hivep2,Stx16,Cdc25b,Fyn,Nfatc1,Tox,Adcy7,Sh3kbp1,Hnrnpl,Vim,Slc20a1,Bcl6,Gpr183,Celf2,Jarid2,Arhgap25,Rnf145,Gpm6b,Plcg1,Asap1,Snx11,Chd1,Dck,Cd4,Gng2,Aebp2,Angptl2,Tiam1
+33	yetfasco-1295	0.0780415	3.51424	M7		Abhd2,Bcl6,Tbce,Dck,Stx16,Axin2,Hivep2,Maf,A630001G21Rik,Eea1,Ptms,Asb8,Adcy7,Tiam1,Tmem33,Il21,Sh3kbp1,Celf2,Chd1,Malt1,Tox,Sept9,Gpm6b,B3gnt2,Rsu1,Eif4enif1,Gbf1,Map4k4,Egr1,Hnrnpl
+34	transfac_pro-M02916	0.0778236	3.49893	M1	Srf,Elf3,Zfp362,Zfp384	Maf,Trim8,Bcl6,Stx16,Tox,Celf2,Nfatc1,Jarid2,Fyn,Hnrnpl,Egr1
+35	yetfasco-1751	0.0772136	3.45605	M8		Trim8,Stx16,Tbc1d4,Maf,Gbf1,Hivep2,Sh3kbp1,Nfatc1,Bcl6,Adcy7,Ccdc12,Ptms,Cd4,Celf2
+36	tfdimers-MD00177	0.0771409	3.45095	M3	Stat1,Tcf3,Tcf7l1,Smad1,E2f1,Tcf4,Sirt6,Cebpb,Vdr	Trim8,Stx16,Tox,Bcl6,Arhgap25,Maf,Jarid2,Hivep2,Sh3kbp1
+37	homer-M00683	0.0769086	3.43461	M2	Zfp513	Maf,Stx16,Celf2,Trim8,Bcl6,Jarid2,Gbf1,Hnrnpl
+38	yetfasco-1260	0.0767924	3.42645	M3	Gm7148,Tgif2,Tgif1,Mef2a,Mef2d,Mef2c,2310045N01Rik,Mef2b,Stat1,Tcf3,Prdm2,Prdm1,Zfp683,E2f1	Stx16,Celf2,Aebp2,Sh3kbp1,Trim8,Tox,Gbf1,Bcl6,Faah,Adcy7,Maf,Eif4enif1,Asb8,Jarid2,Cd4,Zc3h12d,Hivep2
+39	yetfasco-1262	0.0765745	3.41113	M3	Yod1	Stx16,Sh3kbp1,Maf,Trim8,Adcy7,Eif4enif1,Hivep2,Celf2,Bcl6,Asb8,Tox
+40	transfac_pro-M01833	0.0763711	3.39684	M7		Il21,Trim8,Stx16,Cd4,B3gnt2,Hivep2,Maf,Map4k4,Rnf145,Fyn,Egr1,Gbf1
+41	homer-M00431	0.076313	3.39276	M8	Hoxc8,Hoxb8,Hoxd8,Hoxb7,Hoxa7	Trim8,Egr1,Stx16,Tiam1,Nfatc1,Adcy7,Asap1,Ptms,Hivep2,Maf,Gbf1,Sh3kbp1,Slc20a1,Jarid2
+42	yetfasco-1183	0.0762695	3.3897	M1		Stx16,Sh3kbp1,Maf,Tox,Trim8,Bcl6,Snx11,Jarid2,Celf2,Egr1,Gbf1,Adcy7,S100a11
+43	homer-M00385	0.0761242	3.37949	M1	Zfp513	Hnrnpl,Stx16,Maf,Jarid2,Trim8,Gbf1,Bcl6,Nfatc1,Celf2
+44	homer-M00538	0.0760661	3.3754	M1	Zfp513,Zfp362,Zfp384	Stx16,Hnrnpl,Jarid2,Trim8,Tox,Maf,Fyn,Hivep2,Egr1
+45	flyfactorsurvey-exd_FlyReg_FBgn0000611	0.0760516	3.37438	M1	Pbx3,Pbx1,Pbx2,Pbx4	Trim8,Jarid2,Nfatc1,Stx16,Maf,Celf2,Hnrnpl,Tox,Tbc1d4,Axin2,Hivep2,Bcl6,Sh3kbp1,Fyn,Egr1,Zc3h12d,Asap1,Rnf145,Cd4,Slc20a1,Pip4k2a,Dclre1c,Ptms,Plcg1,Tmem65,Tiam1,Asb8,Adcy7,Vim,Aebp2,Gbf1,Sept9,Pou2af1,S100a11,Cdc25b,Gpm6b,Cpsf6,Ccdc12
+46	homer-M00617	0.0760516	3.37438	M1	Pbx3,Pbx2,Pbx1,Pbx4	Trim8,Jarid2,Nfatc1,Stx16,Maf,Celf2,Hnrnpl,Tox,Tbc1d4,Axin2,Hivep2,Bcl6,Sh3kbp1,Fyn,Egr1,Zc3h12d,Asap1,Rnf145,Cd4,Slc20a1,Pip4k2a,Dclre1c,Ptms,Plcg1,Tmem65,Tiam1,Asb8,Adcy7,Vim,Aebp2,Gbf1,Sept9,Pou2af1,S100a11,Cdc25b,Gpm6b,Cpsf6,Ccdc12
+47	transfac_public-M00091	0.0759354	3.36622	M1		Stx16,Maf,Trim8,Nfatc1,Tbc1d4,Hivep2,Bcl6,Sh3kbp1,Hnrnpl
+48	yetfasco-1258	0.0758337	3.35907	M3	Stat1,Tcf3,E2f1,Mef2a,Mef2c,Mef2d,Mef2b,2310045N01Rik,Prdm2,Prdm1,Zfp683,Mybl2,Mybl1,Snapc4,Myb	Stx16,Celf2,Sh3kbp1,Tox,Adcy7,Trim8,Hivep2,Jarid2,Bcl6,Maf,Asb8,Cyb5b,Eif4enif1,Cd4,Abhd2,Faah,Sept9,Fyn,Gbf1,Map4k4,Ermp1,Snx11,Ccdc12
+49	yetfasco-1271	0.0757901	3.35601	M3	Mybl2,Mybl1,Myb,Snapc4,Yod1,E2f1,Tcf3,Mef2a,Mef2d,Mef2c,Mef2b,2310045N01Rik,Mms19	Stx16,Sh3kbp1,Celf2,Trim8,Adcy7,Tox,Hivep2,Eif4enif1,Maf,Ccdc12,Bcl6,Asb8
+50	yetfasco-1928	0.0756159	3.34376	M9	Yod1	Eif4enif1,Rnf145,Sh3kbp1,Axin2,Cd4,Fyn,Aff3,Hivep2,Dck,Faah,Pou2af1,Gpm6b,Gbf1,Bcl6,Tbc1d4,Tox,Adcy7,Tmem65
+51	flyfactorsurvey-CG2052_SOLEXA_2.5_FBgn0039905	0.0752237	3.31619	M1	Tfap2e,Srf,Zfp362,Zfp384	Maf,Stx16,Trim8,Hnrnpl,Sh3kbp1,Jarid2,Bcl6,Celf2,Hivep2,Ptms,Gbf1,Eif4enif1,Fyn,Faah,Cd4,Cpsf6,Asb8,Adcy7,Prkca,Snx11
+52	flyfactorsurvey-her_SOLEXA_10_FBgn0001185	0.0752092	3.31517	M10	Zfat,Zfp827	Rnf145,Ptpn11,Bcl6,Celf2,Man2a1,Cyb5b
+53	yetfasco-1237	0.0746863	3.27842	M3	Gm7148,Tgif2,Tgif1,Mef2a,2310045N01Rik,Mef2b,Mef2c,Mef2d	Stx16,Celf2,Maf,Sh3kbp1,Trim8,Jarid2,Bcl6,Adcy7,Hivep2,Eif4enif1,Cyb5b,Tox,Egr1,Zc3h12d,Fyn,Gbf1
+54	transfac_pro-M01092	0.074541	3.26821	M1	Tcf7l2,Tcf7l1,Tcf7,Lef1,Nanog,Sox11,Sox4	Trim8,Celf2,Nfatc1,Bcl6,Fyn,Maf,Stx16,Axin2,Hivep2,Adcy7,Tox,Gbf1,Tbc1d4
+55	homer-M00056	0.0741924	3.24371	M11	Ets2,Ets1,Elk1,Sox10	Lat,Asap1,Tspan32,Celf2,Hivep2,Arhgap25,Sh3kbp1,Dck,Stx16,Itga4,A630001G21Rik,Rsu1,Cdc25b,Trim8,Nfatc1,Slc20a1,Tmem65,Adcy7,Rnf145,Vps52,Ptpn11,Tbce,Man2a1,Dennd2d,Sept9,Plcg1,Fyn,Zc3h12d,Gpm6b,Abhd2,Bcl6,Pou2af1,Rchy1,Egr1,Vcp,Lrrfip1,Tnfsf8,Camk2d,Tiam1,Cd28,Gbf1,Ptms,Cd4,Myo1g
+56	taipale-RATAAAAR-CPEB1-full	0.0741779	3.24269	M1	Cpeb1	Trim8,Hnrnpl,Bcl6,Stx16,Ptms,Gbf1,Adcy7,Vim,Aebp2,Fyn,Maf
+57	tiffin-TIFDMEM0000085	0.0741779	3.24269	M1		Stx16,Trim8,Celf2,Sh3kbp1,Gbf1,Ptms,Adcy7,Hivep2
+58	flyfactorsurvey-sqz_SANGER_5_FBgn0010768	0.0735098	3.19573	M1	Zfp362,Zfp384	Maf,Stx16,Sh3kbp1,Bcl6,Jarid2,Hnrnpl,Gbf1,Trim8,Eif4enif1,Celf2,Cyb5b,Snx11,Tox,Adcy7,Fyn,Hivep2,Ptms,Cpsf6,Tbc1d4,Map4k4,Asb8,Egr1
+59	yetfasco-1265	0.0733936	3.18756	M3	Mef2a,Mef2c,Mef2d,2310045N01Rik,Mef2b,Rfx2,Rfx3,Rfx4,Rfx8,Rfx6,Rfx1	Stx16,Sh3kbp1,Adcy7,Trim8,Eif4enif1,Cd4,Bcl6,Hivep2,Ccdc12,Cyb5b,Asb8,Celf2,Maf,Gbf1,Snx11
+60	taipale-RTAAACAWMAACA-FOXJ2-DBD	0.0731321	3.16919	M12	Foxj2,Foxo6,Foxd2,Foxi1	Nfatc1,Trim8,Gng2,Tbc1d4,Il21,Gbf1,Bcl6,Tiam1,Hivep2
+61	yetfasco-1198	0.0728707	3.15081	M3	Mybl2,Mybl1,Snapc4,Myb,Mef2a,2310045N01Rik,Mef2b,Mef2c,Mef2d	Stx16,Maf,Sh3kbp1,Eif4enif1,Trim8,Adcy7,Celf2,Cyb5b,Bcl6,Jarid2
+62	yetfasco-1226	0.072769	3.14366	M3	Tgif1,Tgif2,Gm7148,E2f1,Tcf3,Prdm2,Prdm1,Zfp683,Mef2a,Mef2c,Mef2d,2310045N01Rik,Mef2b,Nr3c1,Foxo4,Foxp3,Pgr,Mybl1,Mybl2,Snapc4,Myb	Stx16,Celf2,Adcy7,Sh3kbp1,Bcl6,Eif4enif1,Hivep2,Ccdc12,Trim8,Maf,Cd4,Cyb5b
+63	flyfactorsurvey-hb_SOLEXA_5_FBgn0001180	0.0726383	3.13448	M2	Zfp513,Zfp362,Zfp384	Hnrnpl,Stx16,Maf,Jarid2,Celf2,Bcl6
+64	tfdimers-MD00094	0.0726238	3.13346	M8	Pbx1,Nr1h4,Nr1i2,Nr1i3,Hnf1b,Hnf1a,Pparg,Hoxa13	Egr1,Trim8,Pfkp,Celf2,Gbf1,Ptms,Bcl6,Fyn,Sh3kbp1,Tiam1,Asb8,Aff3
+65	jaspar-CN0147.1	0.0725366	3.12733	M13		Prkca,Axin2,Tox,Rsu1,Dck,Aebp2,Gbf1,Tnfsf8,Vim,Gpm6b
+66	yetfasco-1989	0.0725076	3.12529	M1		Maf,Stx16,Celf2,Trim8,Sh3kbp1,Fyn
+67	transfac_pro-M01375	0.072464	3.12223	M1	Hoxd10,Hoxa10,Hoxd13,Hoxb13,Cdx2,Hoxa9,Hoxb9,Cdx1,Tbp,Ets1	Trim8,Nfatc1,Celf2,Bcl6,Fyn,Hnrnpl,Gbf1,Hivep2,Maf,Gpm6b,Dck,Jarid2,Ptms
+68	transfac_pro-M01007	0.0723768	3.1161	M14	Srf	Egr1,Ptms,Myl6,Trim8,Slc25a4,Gpm6b,Sh3kbp1,Tox,Celf2
+69	yetfasco-1105	0.0723333	3.11304	M15		Stx16,Golph3,Cpsf6,Bcl6,Egr1,Gpm6b,Asb8,Fyn,Hivep2,Sept9,Vcp,Axin2,Nfatc1,Celf2
+70	taipale-RTAAACATMAACA-Foxj3-DBD	0.0720428	3.09262	M12	Foxj2,Foxd2,Foxo4,Foxo6	Trim8,Il21,Gbf1,Sh3kbp1,Gng2,Bcl6,Stx16,Tbc1d4
+71	jaspar-MA0305.1	0.0720137	3.09058	M16		Adcy7,Sept9,Capn2,Dennd2d,Egr1,Malt1,Gpm6b,Tiam1,Arhgap25,Ptms,Hivep2
+72	yetfasco-1656	0.0719266	3.08445	M8		Nfatc1,Trim8,Bcl6,Hivep2,Tbc1d4,Hnrnpl,Cd4,Slc20a1,Sh3kbp1,Tiam1,Axin2,Maf,Stx16,Egr1,Gbf1,Tox,Cpsf6,Ptms,Vim,Fyn
+73	homer-M01764	0.0717232	3.07016	M16		Adcy7,Capn2,Sept9,Egr1,Malt1,Dennd2d,Gpm6b,Arhgap25
+74	wolfe-jim_F1-4_SOLEXA_2.5	0.071331	3.0426	M2	Zfp513,Zfp362,Zfp384	Hnrnpl,Stx16,Maf,Jarid2,Bcl6,Celf2
+75	swissregulon-HMGA1-2.p2	0.0712294	3.03545	M1	Hmga1,Hmga1-rs1,Hmga2,Tfap2c	Trim8,Slc20a1,Celf2,Fyn,Hivep2,Maf,Stx16
+76	jaspar-MA0120.1	0.0707791	3.0038	M1		Trim8,Stx16,Bcl6,Tox,Sh3kbp1,Maf,Hivep2,Asap1
+77	iDMMPMM-HB	0.0707355	3.00074	M1	Zfp513,Zfp362,Zfp384	Maf,Hnrnpl,Stx16,Trim8,Jarid2,Celf2,Bcl6,Ptms,Hivep2,Nfatc1,Cpsf6,Gpm6b,Tox,Tmem65,Adcy7,Snx11,Cyb5b,Gbf1,Egr1

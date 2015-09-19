@@ -1,0 +1,77 @@
+MGI-annotated for SLE
+Dnase1, Fcgr2b, Ptpn22, C1qa, C4b, Ccr2, Cd19, Cd4,
+Cdkn1a, Csf2, Def6, Ep300, Fas, Gadd45a, Ikzf3, Il3,
+Junb, Kit, Lyn, Man2a1, Mta2, Psen1, Psen2, Ptprc,
+Rasgrp1, Rc3h1, Tnfrsf9,Tcrdelta,Trove2
+
+Human GWAS hits (mouse orthologs):
+Itgam, Tnfsf4, Siae, Cd226, Bank1, Blk, Ifna1, Ifna2,
+Irf5, Stat4, Tnfaip3, Tyk2, Trex1, Irak1, Mecp2, Pxk,
+Xkr6, Jazf1, Tnip1, Prdm1, Uhrf1bp1, Pttg1, Ube2l3,
+Il10, Il21, Il21r, Atg5, Ica1, Nmnat2, Lyn, Myd88,
+Stat6, Stat5a, Fcgr2b, Atg7, Dnase1Dnase1
+
+Fcgr2b
+Ptpn22
+C1qa
+C4b
+Ccr2
+Cd19
+Cd4
+Cdkn1a
+Csf2
+Def6
+Ep300
+Fas
+Gadd45a
+Ikzf3
+Il3
+Junb
+Kit
+Lyn
+Man2a1
+Mta2
+Psen1
+Psen2
+Ptprc
+Rasgrp1
+Rc3h1
+Tnfrsf9
+Tcrdelta
+Trove2
+Itgam
+Tnfsf4
+Siae
+Cd226
+Bank1
+Blk
+Ifna1
+Ifna2
+Irf5
+Stat4
+Tnfaip3
+Tyk2
+Trex1
+Irak1
+Mecp2
+Pxk
+Xkr6
+Jazf1
+Tnip1
+Prdm1
+Uhrf1bp1
+Pttg1
+Ube2l3
+Il10
+Il21
+Il21r
+Atg5
+Ica1
+Nmnat2
+Lyn
+Myd88
+Stat6
+Stat5a
+Fcgr2b
+Atg7
+Dnase1
