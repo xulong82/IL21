@@ -12,11 +12,12 @@ library(qvalue)
 library(dplyr)
 library(tidyr)
 library(reshape)
+library(Biobase)
 
 rm(list = ls())
 load("~/Dropbox/X/summary.rdt")
 source("~/Dropbox/X/function.R")
-setwd("~/Dropbox/GitHub/Lupus/Crotty")
+setwd("~/Dropbox/GitHub/Il21/Crotty2015")
 
 load("../data/myTpm.rdt")
 matboxplot(myTpm, groupFactor = gsub("[12]", "", names(myTpm)))
@@ -129,17 +130,24 @@ data.frame(KEGG = gk$KEGG$Term[1:20], BP = gk$GO$BP$Term[1:20], MF = gk$GO$BP$Te
 gdt <- tfh
 gdt$select = "N"
 gdt[rownames(tfh_select), "select"] = "Y"
+gdt$select[gdt$select == "Y" & gdt$dm < 0] = "TFH"
+gdt$select[gdt$select == "Y" & gdt$dm > 0] = "PP"
+
+gdt$select = factor(gdt$select, levels = c("N", "TFH", "PP"))
 
 derry <- read.table("select_derry")$V1 %>% as.vector
 gdt$label = rownames(gdt)
 gdt$label[! gdt$label %in% derry] = ""
 
-pdf("scatterplot6.pdf", width = 7, height = 6)
+pdf("scatterplot7.pdf", width = 7, height = 6)
+
 ggplot(gdt, aes(x = PP_avg, y = TFH_avg, label = label)) + 
-  geom_point(aes(colour = factor(select, levels = c("Y", "N")))) +
-  geom_abline(intercept = 0, slope = 1) + geom_text(size = 3) +
-  scale_color_manual(values = c("firebrick1", "grey30")) + 
+  geom_point(aes(colour = select)) +
+  geom_abline(intercept = 0, slope = 1) + 
+# geom_text(size = 3) +
+  scale_color_manual(values = c("grey30", "dodgerblue3", "firebrick1")) + 
   theme_bw() + theme(legend.title = element_blank())
+
 dev.off()
 
 x = tfh_select[order(tfh_select$dm), ]
@@ -171,3 +179,22 @@ ggplot() +
         axis.text.x = element_text(size = 10, face = 2, angle = 90, vjust = 0.5),
         axis.text.y = element_text(size = 10, face = 2))
 dev.off()
+
+#
+tfh = read.xlsx("tfh.xlsx", sheetName = "TFH_2", row.names = 1, stringsAsFactors = F)
+tfh_up = rownames(tfh)[tfh$dm < 0] # High in TFH
+tfh_down = rownames(tfh)[tfh$dm > 0] # High in PP
+
+tfh_up_go = mmGK(tfh_up)
+tfh_down_go = mmGK(tfh_down)
+
+write.xlsx(tfh_up_go$KEGG, file = "TFH_KEGG.xlsx", sheetName = "up", append = T)
+write.xlsx(tfh_down_go$KEGG, file = "TFH_KEGG.xlsx", sheetName = "down", append = T)
+
+write.xlsx(tfh_up_go$GO$BP, file = "TFH_GO.xlsx", sheetName = "up_BP", append = T)
+write.xlsx(tfh_up_go$GO$MF, file = "TFH_GO.xlsx", sheetName = "up_MF", append = T)
+write.xlsx(tfh_up_go$GO$CC, file = "TFH_GO.xlsx", sheetName = "up_CC", append = T)
+
+write.xlsx(tfh_down_go$GO$BP, file = "TFH_GO.xlsx", sheetName = "down_BP", append = T)
+write.xlsx(tfh_down_go$GO$MF, file = "TFH_GO.xlsx", sheetName = "down_MF", append = T)
+write.xlsx(tfh_down_go$GO$CC, file = "TFH_GO.xlsx", sheetName = "down_CC", append = T)

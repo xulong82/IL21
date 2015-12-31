@@ -1,5 +1,3 @@
-# Copyright: Xulong Wang (xulong.wang@jax.org)
-
 library(ape)
 library(amap)
 library(ggplot2)
@@ -7,12 +5,17 @@ library(lattice)
 library(ggdendro)
 library(grid)
 library(xtable)
+library(xlsx)
 
 rm(list = ls())
-setwd("~/Dropbox/GitHub/Lupus")
+source("~/Dropbox/X/function.R")
+setwd("~/Dropbox/GitHub/Il21")
+
 load("./data/myTpm.rdt")
 
+expr <- myTpm[apply(myTpm, 1, function(x) max(x) > 20), ]
 expr <- myTpm[apply(myTpm, 1, function(x) max(x) > 50), ]
+
 group <- gsub("[12]", "", colnames(expr))
 pval <- apply(expr, 1, function (x) min(summary(aov(x ~ group))[[1]][["Pr(>F)"]], na.rm = T))
 expr <- expr[pval < 0.05, ]
@@ -23,6 +26,7 @@ idx.sample = apply(emean, 1, which.max)
 
 profile1 <- profile2 <- list()
 group <- c("1", "1", "2", "2")
+
 for (sample in c("NN", "NP", "PP")) {
   cat(sample, "\n")
   
@@ -150,3 +154,14 @@ table$"FC(NP/NN)" <- rowMeans(table[, c("NP1", "NP2")]) / rowMeans(table[, c("NN
 table$"FC(PP/NN)" <- rowMeans(table[, c("PP1", "PP2")]) / rowMeans(table[, c("NN1", "NN2")])
 rownames(table) <- NULL
 write.xlsx(table, file = "Results/signatures.xlsx", sheetName = "genes", row.names = F, append = T)
+
+NN = emean[profile1[[1]], ]
+NP = emean[profile1[[2]], ]
+PP = emean[profile1[[3]], ]
+
+write.xlsx(NN, file = "Results/new.xlsx", sheetName = "NN", append = T)
+write.xlsx(NP, file = "Results/new.xlsx", sheetName = "NP", append = T)
+write.xlsx(PP, file = "Results/new.xlsx", sheetName = "PP", append = T)
+
+x = lapply(profile1, mmGK)
+write.xlsx(x[[3]]$GO$CC, file = "Results/new.xlsx", sheetName = "CC3", append = T)
