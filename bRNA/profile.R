@@ -8,8 +8,8 @@ library(xtable)
 library(xlsx)
 
 rm(list = ls())
-source("~/Dropbox/X/function.R")
-setwd("~/Dropbox/GitHub/Il21")
+source("~/GitHub/X/function.R")
+setwd("~/GitHub/Il21")
 
 load("./data/myTpm.rdt")
 

@@ -15,9 +15,9 @@ library(reshape)
 library(Biobase)
 
 rm(list = ls())
-load("~/Dropbox/X/summary.rdt")
-source("~/Dropbox/X/function.R")
-setwd("~/Dropbox/GitHub/Il21/Crotty2015")
+load("~/GitHub/X/summary.rdt")
+source("~/GitHub/X/function.R")
+setwd("~/GitHub/Il21/Crotty2015")
 
 load("../data/myTpm.rdt")
 matboxplot(myTpm, groupFactor = gsub("[12]", "", names(myTpm)))
@@ -107,6 +107,8 @@ dt3 <- dt2 + rowMeans(data)
 heatmap(cor(dt2))
 heatmap(cor(dt3))
 hc1 <- hcluster(t(dt3), method = "pearson", link = "average")
+
+hc1 <- hcluster(t(data), method = "pearson", link = "average")
 
 pdf("phylo3.pdf", width = 6, height = 5)
 plot(as.phylo(hc1), edge.width = 2, font = 2, label.offset = 3e-4)
