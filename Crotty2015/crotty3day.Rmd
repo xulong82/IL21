@@ -1,0 +1,118 @@
+---
+title: "Crotty3day"
+author: "Xulong Wang"
+date: "January 25, 2016"
+output: pdf_document
+---
+
+```{r, include = F}
+
+library(affy)
+library(oligo)
+library(ape)
+library(amap)
+library(xlsx)
+library(genefilter)
+library(org.Mm.eg.db)
+library(TxDb.Mmusculus.UCSC.mm10.knownGene)
+library(preprocessCore)
+library(qvalue)
+library(dplyr)
+library(tidyr)
+library(reshape)
+library(Biobase)
+
+rm(list = ls())
+source("~/Dropbox/GitHub/X/function.R")
+setwd("~/Dropbox/GitHub/Il21/Crotty2015")
+
+```
+
+# TPM
+
+```{r}
+
+load("../data/myTpm.rdt")
+myTpm[rowMax(as.matrix(myTpm)) > 1e4, ]
+myTpm <- myTpm[! rowMax(as.matrix(myTpm)) > 1e4, ]
+myTpm <- sweep(myTpm, 2, colSums(myTpm), "/") * 1e6 
+myTpm <- log2(myTpm + 1)
+myTpm <- myTpm[rowMax(as.matrix(myTpm)) > 5, ]
+
+group <- gsub("[12]", "", names(myTpm))
+aov.pval <- apply(myTpm, 1, function (x) summary(aov(x ~ group))[[1]][["group", "Pr(>F)"]])
+myTpm <- myTpm[aov.pval < 0.05, ]
+
+myTpm_mean <- data.frame(NN = rowMeans(myTpm[1:2]), NP = rowMeans(myTpm[3:4]), PP = rowMeans(myTpm[5:6]))
+colSums(myTpm_mean)
+
+```
+
+# Crotty's 3 days
+
+```{r}
+
+file <- "GSE67334_TFH.Vs.TH1.DESeq_Analysis_DE_Genes.txt"
+three <- read.table(file, header = T, row.names = 1, sep = "\t") 
+
+three_expr <- three[grep("Rep", names(three))] # read count
+three_expr <- sweep(three_expr, 2, colSums(three_expr), "/") * 1e7 
+
+three_mean <- three[grep("^Mean", names(three))]
+names(three_mean) <- gsub("Mean.", "", names(three_mean))
+
+txdb <- keepStandardChromosomes(TxDb.Mmusculus.UCSC.mm10.knownGene)
+entrez = AnnotationDbi::select(org.Mm.eg.db, rownames(three), columns=c("ENTREZID"), keytype="SYMBOL")
+nrow(entrez[is.na(entrez$ENTREZID), ])
+entrez.keep = entrez$ENTREZID[! is.na(entrez$ENTREZID)]
+tx <- transcriptsBy(txdb, "gene")
+tx <- tx[names(tx) %in% entrez.keep]
+tx.len <- mean(width(tx)) # caveat
+names(tx.len) <- entrez$SYMBOL[match(names(tx.len), entrez$ENTREZID)]
+
+three_expr <- three_expr[names(tx.len), ]
+three_expr <- sweep(three_expr, 1, tx.len, "/")
+three_expr <- sweep(three_expr, 2, colSums(three_expr), "/") * 1e6 
+three_expr <- log2(three_expr + 1)
+
+three_mean <- three_mean[names(tx.len), ]
+three_mean <- sweep(three_mean, 1, tx.len, "/")
+three_mean <- sweep(three_mean, 2, colSums(three_mean), "/") * 1e6 
+three_mean <- log2(three_mean + 1)
+
+```
+
+# BATCH CORRECTION
+
+```{r}
+
+data <- inner_join(add_rownames(myTpm, "gene"), add_rownames(three_expr, "gene"))
+data <- inner_join(add_rownames(myTpm_mean, "gene"), add_rownames(three_mean, "gene"))
+
+data <- data.frame(row.names = data$gene, data[-1])
+colSums(data)
+
+names(data) <- gsub("^T.*\\.", "", names(data))
+
+dt.ctr <- data - rowMeans(data)
+dt.svd <- svd(dt.ctr) # SVD
+barplot(dt.svd$v[, 1]) # PC1
+
+dt2 <- t(apply(dt.ctr, 1, function (x) {lm(x ~ dt.svd$v[, 1])$res})) 
+dt3 <- dt2 + rowMeans(data)
+
+```
+
+# Clutering
+
+```{r}
+
+hc1 <- hcluster(t(dt3), method = "pearson", link = "average")
+
+pdf("./phylo3d.pdf", width = 6, height = 4.5)
+
+plot(as.phylo(hc1), edge.width = 2, font = 2, label.offset = 3e-4)
+
+dev.off()
+
+```

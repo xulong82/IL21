@@ -1,10 +1,7 @@
-# Copyright: Xulong Wang (xulong.wang@jax.org)
-# Purpose: Plots
-
 library(ggplot2)
 
 rm(list = ls())
-setwd("~/Dropbox/GitHub/Lupus")
+setwd("~/Dropbox/GitHub/Il21")
 load("./data/myTpm.rdt")
 
 derry <- read.delim("./data/derry.txt", stringsAsFactors = F, header = F)
@@ -24,8 +21,10 @@ write.xlsx(table, file = "Results/chosen.xlsx", sheetName = "genes", row.names =
 
 geneId.tfh <- geneId[1:34]
 gdt <- table[geneId.tfh, ]
+
 pdf("./Figure/TFH.pdf", width = 10, height = 5)
 # pdf("./Figure/THC.pdf", width = 5, height = 7)
+
 ggplot() + 
   geom_point(data = gdt, aes(x = geneId, y = log2(FCNP), size = NP), color = "chartreuse3") + 
   geom_point(data = gdt, aes(x = geneId, y = log2(FCPP), size = PP), color = "dodgerblue3") +
@@ -37,6 +36,7 @@ ggplot() +
         axis.text.y = element_text(size = 10, face = 2),
         axis.title = element_text(size = 12, face = 2),
         legend.position = "none")
+
 dev.off()
 
 gdt <- myTpm[geneId.tfh, ]
@@ -51,7 +51,7 @@ gdt <- data.frame(value = c(as.matrix(gdt)),
 
 pdf("./Figure/TFH.pdf", width = 5, height = 8)
 pdf("./Figure/TFH.pdf", width = 8, height = 5)
-# pdf("./Figure/THC.pdf", width = 5, height = 7)
+
 ggplot() + 
   geom_line(data = gdt, aes(x = gene, y = value), color = "grey80", size = 2) +
   geom_point(data = gdt, aes(x = gene, y = value, color = sample), size = 3) +
@@ -65,6 +65,7 @@ ggplot() +
         axis.text.x = element_text(size = 10, face = 2, angle = 90, vjust = 0.5),
         axis.text.y = element_text(size = 10, face = 2),
         legend.position = "none")
+
 dev.off()
 
 bar.dt <- data.frame("NN" = rowMeans(expr[1:2]), "NP" = rowMeans(expr[3:4]), "PP" = rowMeans(expr[5:6]))
@@ -75,6 +76,7 @@ bar.dt <- data.frame(value = c(as.matrix(bar.dt)),
                      sample = factor(rep(colnames(bar.dt), each = nrow(bar.dt)), levels = colnames(bar.dt)))
 
 pdf("./Public/barplot.pdf", width = 12, height = 7)
+
 # ggplot(bar.dt[bar.dt$gene %in% geneId.tfh, ], aes(x = gene, y = value)) +
 ggplot(bar.dt, aes(x = gene, y = value)) +
   # geom_bar(aes(fill = sample), stat = "identity", position = "dodge", width = 0.65) +
@@ -91,9 +93,11 @@ ggplot(bar.dt, aes(x = gene, y = value)) +
         legend.title = element_blank(), 
         legend.text = element_text(size = 12),
         legend.key = element_blank()) 
+
 dev.off()
 
 pdf("./Results/myplot3.pdf")
+
 par(mar = c(5, 4, 4, 2))
 ggplot(data.tfh4, aes(x = as.numeric(sample), y = Log2.Ratio, group = gene, colour = gene)) + 
   geom_line(size = 1.5) + geom_point(size = 5) +
@@ -108,9 +112,11 @@ ggplot(data.tfh4, aes(x = as.numeric(sample), y = Log2.Ratio, group = gene, colo
   theme(legend.position = "top", legend.direction = "horizontal", 
         legend.text = element_text(size = 12, face = "bold"),
         legend.title = element_blank(), legend.key = element_blank())
+
 dev.off()
 
 pdf("./Results/myplot2.pdf")
+
 par(mar = c(5, 4, 4, 2))
 ggplot(data.tfh2, aes(x = gene, y = Log2.Ratio, fill = sample)) + geom_boxplot() +
   theme_bw() +
@@ -120,4 +126,79 @@ ggplot(data.tfh2, aes(x = gene, y = Log2.Ratio, fill = sample)) + geom_boxplot()
   theme(legend.position = "top", legend.direction = "horizontal", 
         legend.text = element_text(size = 12, face = "bold"),
         legend.title = element_blank(), legend.key = element_blank()) 
+
+dev.off()
+
+# Jan 25, 2016, heatmap on Derry's. HEATMAP ON CHOSEN GENES
+
+gdt <- data.frame("N" = rowMeans(myTpm[1:2]), "ACT" = rowMeans(myTpm[3:4]), "IL21-ACT" = rowMeans(myTpm[5:6]))
+
+name = c("Bcl6", "E2f2", "Id3", "Fosb", "Tox", "Tox2", "Egr2", "Maf", "Nfatc1", "Pou2af1")
+name = c("Tcf7", "Lef1", "Prdm1")
+name = c("Il21", "Tnsf8", "Tgfb3", "Angpotl2")
+
+dt = gdt[name, ]
+
+# dt <- log2(dt + 1)
+# dt <- t(apply(dt, 1, scale))
+
+tile <- data.frame(value = c(as.matrix(dt)), gene = rep(rownames(dt), 3), sample = rep(names(gdt), each = nrow(dt)))
+tile$sample = factor(tile$sample, levels = names(gdt))
+
+tile$value <- log2(tile$value + 1)
+tile$value <- scale(tile$value)
+
+pdf("./Results/heatmap_tf.pdf", width = 6, height = 2)
+
+ggplot(tile, aes(x = sample, y = gene, fill = value)) + 
+  geom_tile() + guides(alpha = F) + coord_flip() +
+  scale_fill_gradient2(low = "blue", high = "red") +
+  theme_bw() + xlab("") + ylab("") + 
+  theme(axis.text.x = element_text(size = 12, face = "bold", angle = 90),
+        axis.text.y = element_text(size = 12, face = "bold"),
+        legend.text = element_text(size = 12, face = "bold"), 
+        legend.title = element_blank())
+
+dev.off()
+
+# Jan 18, 2016, graph request from Liz and Sandy
+
+sandy = c("Bcl6", "Maf", "Nfatc1", "Prdm1", "Ascl2", "Irf4", "Il21", "Il10", "Ifng", "Cxcr4", "Cxcr5", "Cd28", "Cd200", "Il4", "Il5", "Il21r", "Foxp3", "Il12rb1", "Il12rb2", "Slamf6")
+dt = myTpm[sandy, ]
+
+names(dt) <- c("N S1", "N S2", "ACT S1", "ACT S2", "ACT IL21 S1", "ACT IL21 S2")
+hc1 <- hcluster(t(dt))
+hc2 <- hcluster(dt)
+hc2 <- hcluster(dt, method = "correlation", link = "centroid")
+
+# --- HEATMAP ON PROLIFIC GENES ---
+
+tile1 <- dt[hc2$order, hc1$order]
+gene = rownames(tile1)
+sample = names(tile1)
+
+# tile1 <- log2(tile1 + 1)
+# tile2 <- apply(tile1, 2, function(x) scale(x, center = T, scale = T))
+# tile2 <- apply(tile1, 2, function(x) scale(x, center = F, scale = T))
+
+# tile2 <- t(apply(tile1, 1, scale))
+# colnames(tile2) <- colnames(tile1)
+
+tile2 <- data.frame(value = c(as.matrix(tile1)), gene = rep(gene, 6), sample = rep(sample, each = nrow(tile1)))
+
+tile2$sample <- factor(tile2$sample, levels = sample)
+tile2$gene <- factor(tile2$gene, levels = gene)
+
+tile2$value <- log2(tile2$value + 1)
+tile2$value <- scale(tile2$value)
+
+pdf("./heatmap.pdf", width = 12, height = 3)
+ggplot(tile2, aes(x = sample, y = gene, fill = value)) + 
+  geom_tile() + guides(alpha = F) + coord_flip() +
+  scale_fill_gradient2(low = "blue", high = "red") +
+  theme_bw() + xlab("") + ylab("") + 
+  theme(axis.text.x = element_text(size = 10, angle = 90),
+        axis.text.y = element_text(size = 10),
+        legend.text = element_text(size = 10), 
+        legend.title = element_blank())
 dev.off()

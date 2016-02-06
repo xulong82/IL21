@@ -7,7 +7,6 @@ library(genefilter)
 library(org.Mm.eg.db)
 library(TxDb.Mmusculus.UCSC.mm10.knownGene)
 library(preprocessCore)
-library(quantro)
 library(qvalue)
 library(dplyr)
 library(tidyr)
@@ -15,33 +14,38 @@ library(reshape)
 library(Biobase)
 
 rm(list = ls())
-load("~/GitHub/X/summary.rdt")
-source("~/GitHub/X/function.R")
-setwd("~/GitHub/Il21/Crotty2015")
+source("~/Dropbox/GitHub/X/function.R")
+setwd("~/Dropbox/GitHub/Il21/Crotty2015")
+
+# tpm 
 
 load("../data/myTpm.rdt")
-matboxplot(myTpm, groupFactor = gsub("[12]", "", names(myTpm)))
 myTpm[rowMax(as.matrix(myTpm)) > 1e4, ]
 myTpm <- myTpm[! rowMax(as.matrix(myTpm)) > 1e4, ]
 myTpm <- sweep(myTpm, 2, colSums(myTpm), "/") * 1e6 
 myTpm <- log2(myTpm + 1)
 myTpm <- myTpm[rowMax(as.matrix(myTpm)) > 5, ]
+
 group <- gsub("[12]", "", names(myTpm))
 aov.pval <- apply(myTpm, 1, function (x) summary(aov(x ~ group))[[1]][["group", "Pr(>F)"]])
 myTpm <- myTpm[aov.pval < 0.05, ]
 myTpm_mean <- data.frame(NN = rowMeans(myTpm[1:2]), NP = rowMeans(myTpm[3:4]), PP = rowMeans(myTpm[5:6]))
 colSums(myTpm_mean)
 
+# counts
+
 load("../data/myCount.rdt") # note: do not cluster well 
 matboxplot(myCount, groupFactor = gsub("[12]", "", names(myCount)))
 myCount[rowMax(as.matrix(myCount)) > 1e5, ]
 myCount <- myCount[! rowMax(as.matrix(myCount)) > 1e5, ]
 myCount <- sweep(myCount, 2, colSums(myCount), "/") * 1e7 
-myCount <- myCount[rowMax(as.matrix(myCount)) > 10, ]
-group <- gsub("[12]", "", names(myCount))
-aov.pval <- apply(myCount, 1, function (x) summary(aov(x ~ group))[[1]][["group", "Pr(>F)"]])
-myCount <- myCount[aov.pval < 0.05, ]
+myCount <- myCount[rowMax(as.matrix(myCount)) > 30, ]
+# group <- gsub("[12]", "", names(myCount))
+# aov.pval <- apply(myCount, 1, function (x) summary(aov(x ~ group))[[1]][["group", "Pr(>F)"]])
+# myCount <- myCount[aov.pval < 0.3, ]
 myCount <- data.frame(NN = rowMeans(myCount[1:2]), NP = rowMeans(myCount[3:4]), PP = rowMeans(myCount[5:6]))
+
+# 8 days
 
 cel.files <- read.celfiles(list.celfiles("GSE21380_CEL/", full.name = T))
 eight <- exprs(rma(cel.files))
@@ -55,8 +59,10 @@ eight <- eight[mouse430$Probe.Set.ID, ]
 eight <- apply(eight, 2, function(x) tapply(x, mouse430$Gene.Symbol, max))
 colnames(eight) <- c("NonTFH_Rep1", "NonTFH_Rep2", "TFH_Rep1", "TFH_Rep2", "GCTFH_Rep1", "GCTFH_Rep2", "Naive_CD4_T")
 eight <- eight[-1, ] %>% as.data.frame
-matboxplot(eight, groupFactor = gsub("_.*", "", names(eight)))
+
 eight_mean <- data.frame(TH1 = rowMeans(eight[1:2]), TFH = rowMeans(eight[3:4]), GCTFH = rowMeans(eight[5:6]), NV = eight[7])
+
+# 3 days
 
 file <- "GSE67334_TFH.Vs.TH1.DESeq_Analysis_DE_Genes.txt"
 three <- read.table(file, header = T, row.names = 1, sep = "\t") 
@@ -64,6 +70,8 @@ three_expr <- three[grep("Rep", names(three))] # read count
 matboxplot(three_expr, groupFactor = gsub("_.*", "", names(three_expr)))
 three_mean <- three[grep("^Mean", names(three))]
 names(three_mean) <- gsub("Mean.", "", names(three_mean))
+
+three_expr <- sweep(three_expr, 2, colSums(three_expr), "/") * 1e7 
 
 txdb <- keepStandardChromosomes(TxDb.Mmusculus.UCSC.mm10.knownGene)
 entrez = AnnotationDbi::select(org.Mm.eg.db, rownames(three), columns=c("ENTREZID"), keytype="SYMBOL")
@@ -85,17 +93,19 @@ three_expr <- sweep(three_expr, 2, colSums(three_expr), "/") * 1e6
 three_expr <- log2(three_expr + 1)
 
 # BATCH CORRECTION
+
+data <- inner_join(add_rownames(myCount, "gene"), add_rownames(three_expr, "gene"))
 data <- inner_join(add_rownames(myTpm, "gene"), add_rownames(three_expr, "gene"))
 data <- inner_join(add_rownames(myTpm_mean, "gene"), add_rownames(three_mean, "gene"))
+
+data <- inner_join(add_rownames(myTpm, "gene"), add_rownames(eight, "gene"))
+data <- inner_join(add_rownames(myTpm_mean, "gene"), add_rownames(eight, "gene"))
+
 data <- data.frame(row.names = data$gene, data[-1])
-data <- normalize.quantiles(as.matrix(data))
-heatmap(cor(data)) # normalize to transcript length is a must do
 colSums(data)
 
 names(data) <- gsub("^T.*\\.", "", names(data))
 
-data <- inner_join(add_rownames(myTpm_mean, "gene"), add_rownames(eight, "gene"))
-data <- data.frame(row.names = data$gene, data[-1])
 heatmap(cor(data)) # two naive samples clustered without norm.
 
 dt.ctr <- data - rowMeans(data)
@@ -107,8 +117,6 @@ dt3 <- dt2 + rowMeans(data)
 heatmap(cor(dt2))
 heatmap(cor(dt3))
 hc1 <- hcluster(t(dt3), method = "pearson", link = "average")
-
-hc1 <- hcluster(t(data), method = "pearson", link = "average")
 
 pdf("phylo3.pdf", width = 6, height = 5)
 plot(as.phylo(hc1), edge.width = 2, font = 2, label.offset = 3e-4)

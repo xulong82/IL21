@@ -4,7 +4,7 @@ library(VennDiagram)
 library(Biobase)
 
 rm(list = ls())
-setwd("~/GitHub/Il21")
+setwd("~/Dropbox/GitHub/Il21")
 
 options(stringsAsFactors = F)
 
@@ -49,6 +49,8 @@ col.b = c("white", "white", "white", "red")
 venn.diagram(list(PP = rownames(pp), TFH = tfh$gene, TH1 = th1$gene), fill = col.a, file = "./venn.png", imagetype = "png")
 venn.diagram(list(NP = rownames(np), TFH = tfh$gene, TH1 = th1$gene), fill = col.a, file = "./venn.png", imagetype = "png")
 venn.diagram(list(NN = rownames(nn), TFH = tfh$gene, TH1 = th1$gene), fill = col.a, file = "./venn.png", imagetype = "png")
+
+intersect(tfh$gene, rownames(np))
 
 venn.diagram(list(NN = rownames(nn), NP = rownames(np), PP = rownames(pp), TFH = tfh$gene), fill = col1, 
              file = "./venn.png", imagetype = "png")
