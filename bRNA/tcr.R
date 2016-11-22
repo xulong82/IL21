@@ -5,7 +5,7 @@ rm(list = ls())
 library(ggplot2)
 library(pheatmap)
 
-setwd("~/Dropbox/GitHub/Lupus")
+setwd("~/Dropbox/GitHub/Il21")
 load("./data/myTpm.rdt")
 
 myTpm <- data.frame(row.names = rownames(myTpm), 

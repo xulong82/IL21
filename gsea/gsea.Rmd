@@ -1,0 +1,87 @@
+---
+title: "Untitled"
+author: "Xulong Wang"
+date: "June 4, 2016"
+output: html_document
+---
+
+```{r, include = F}
+
+library(affy)
+library(oligo)
+library(ape)
+library(amap)
+library(xlsx)
+library(genefilter)
+library(org.Mm.eg.db)
+library(TxDb.Mmusculus.UCSC.mm10.knownGene)
+library(preprocessCore)
+library(qvalue)
+library(dplyr)
+library(tidyr)
+library(reshape)
+library(Biobase)
+
+rm(list = ls())
+
+```
+
+# 8-day
+
+```{r}
+
+setwd("~/Dropbox/GitHub/Il21/Crotty2015")
+cel.files <- read.celfiles(list.celfiles("GSE21380_CEL/", full.name = T))
+eight <- exprs(rma(cel.files))
+
+file <- "Mouse430_2.na35.annot.csv.gz"
+mouse430 <- read.table(file, header = T, comment.char = "#", sep = ",", stringsAsFactors = F)
+mouse430 <- mouse430[c("Probe.Set.ID", "Gene.Symbol")]
+mouse430$Gene.Symbol <- gsub(" .*", "", mouse430$Gene.Symbol)
+
+eight <- eight[mouse430$Probe.Set.ID, ]
+eight <- apply(eight, 2, function(x) tapply(x, mouse430$Gene.Symbol, max))
+colnames(eight) <- c("NonTFH_Rep1", "NonTFH_Rep2", "TFH_Rep1", "TFH_Rep2", "GCTFH_Rep1", "GCTFH_Rep2", "Naive_CD4_T")
+eight <- eight[-1, ] %>% as.data.frame
+
+eight = cbind(NAME = rownames(eight), DESCRIPTION = "na", eight)
+rownames(eight) = NULL
+
+write.table(eight, file = "../gsea/eight.txt", quote = F, sep = "\t", row.names = F)
+
+eight_mean <- data.frame(TH1 = rowMeans(eight[1:2]), TFH = rowMeans(eight[3:4]), GCTFH = rowMeans(eight[5:6]), NV = eight[7])
+
+```
+
+# 3-day
+
+```{r}
+
+file <- "GSE67334_TFH.Vs.TH1.DESeq_Analysis_DE_Genes.txt"
+three <- read.table(file, header = T, row.names = 1, sep = "\t") 
+
+three <- three[grep("Rep", names(three))] # read count
+three <- sweep(three, 2, colSums(three), "/") * 1e7 
+
+txdb <- keepStandardChromosomes(TxDb.Mmusculus.UCSC.mm10.knownGene)
+entrez = AnnotationDbi::select(org.Mm.eg.db, rownames(three), columns=c("ENTREZID"), keytype="SYMBOL")
+nrow(entrez[is.na(entrez$ENTREZID), ])
+entrez.keep = entrez$ENTREZID[! is.na(entrez$ENTREZID)]
+tx <- transcriptsBy(txdb, "gene")
+tx <- tx[names(tx) %in% entrez.keep]
+tx.len <- mean(width(tx)) # caveat
+names(tx.len) <- entrez$SYMBOL[match(names(tx.len), entrez$ENTREZID)]
+
+three <- three[names(tx.len), ]
+three <- sweep(three, 1, tx.len, "/")
+three <- sweep(three, 2, colSums(three), "/") * 1e6 
+three <- log2(three + 1)
+
+three = cbind(NAME = rownames(three), DESCRIPTION = "na", three)
+
+rownames(three) = NULL
+names(three) <- gsub("^T.*\\.", "", names(three))
+
+write.table(three, file = "../gsea/three.txt", quote = F, sep = "\t", row.names = F)
+
+```

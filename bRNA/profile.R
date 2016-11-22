@@ -2,7 +2,6 @@ library(ape)
 library(amap)
 library(ggplot2)
 library(lattice)
-library(ggdendro)
 library(grid)
 library(xtable)
 library(xlsx)
@@ -157,6 +156,38 @@ dev.off()
 
 # --- TABLE ---
 
+profile1
+
+###
+
+txf = c("Bcl6", "E2f2", "Id3", "Fosb", "Tox", "Tox2", "Egr2", "Maf", "Nfatc1", "Pou2af1", "Tcf7", "Lef1", "Prdm1", "Foxp1", "Foxo1")
+ckr = c("Il21", "Tnfsf8", "Tgfb3", "Angptl2", "Il6ra", "Il6st", "Il21r")
+mks = c("Sostdc1", "Cxcr5", "Btla", "Cd200", "Slamf6", "Gpm6b")
+tcr = c("Cd4", "Cd28", "Lag3")
+ccy = c("Mki67", "Cdc25b", "Ccdc12", "Ccdc28b", "Tbc1d4", "Myo1g")
+th1 = c("Ifng", "Tbx21", "Id2", "Gzmb", "Il12rb2", "Nkg7")
+th2 = c("Il4", "Gata3")
+nkt = c("Asb2", "Klrg1", "Serpina3g", "Ccl5")
+reg = c("Foxp3", "Il2ra", "Il12rb2", "Tnfrsf18")
+
+th17 = c("Rorc", "Il17a", "Il17f", "Il22")
+
+all = c(txf, ckr, mks, tcr, ccy, th1, th2, nkt, reg)
+
+###
+
+scatter <- myTpm[all, ]
+scatter <- myTpm[geneId, ]
+group <- gsub("[12]", "", names(scatter))
+table <- data.frame("NN" = rowMeans(scatter[1:2]), "NP" = rowMeans(scatter[3:4]), "PP" = rowMeans(scatter[5:6]))
+table$anova <- apply(scatter, 1, function (x) min(summary(aov(x ~ group))[[1]][["Pr(>F)"]], na.rm = T))
+table$fc_act_n <- log2(table$NP + 1) - log2(table$NN + 1)
+table$fc_il21_n <- log2(table$PP + 1) - log2(table$NN + 1)
+
+write.xlsx(table, file = "./Manu/table2.xlsx", sheetName = "genes", append = T)
+
+#
+
 scatter <- log2(scatter + 1)
 scatter <- data.frame("NN" = rowMeans(scatter[1:2]), "NP" = rowMeans(scatter[3:4]), "PP" = rowMeans(scatter[5:6]))
 
@@ -184,3 +215,4 @@ write.xlsx(PP, file = "Results/new.xlsx", sheetName = "PP", append = T)
 
 x = lapply(profile1, mmGK)
 write.xlsx(x[[3]]$GO$CC, file = "Results/new.xlsx", sheetName = "CC3", append = T)
+

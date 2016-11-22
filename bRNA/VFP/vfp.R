@@ -4,7 +4,7 @@
 rm(list = ls())
 library(ggplot2)
 
-setwd("~/Dropbox/GitHub/Lupus")
+setwd("~/Dropbox/GitHub/IL21/bRNA")
 rsem.tx <- read.delim("./VFP/rsem_genes.txt")
 rsem.tx <- data.frame(row.names = rsem.tx$transcript_id.s., rsem.tx[, 2:7])
 head(rsem.tx)
